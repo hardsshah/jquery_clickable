@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>jQuery Clickable Box</title>
+
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jquery.clickable.js"></script>
+		
+		<script type="text/javascript">
+		  $(document).ready(function(){
+		    $(".section").clickable({
+		      hover: function() {
+		        $(this).addClass("hover");
+		        $(this).append('<div class="learn-more">Learn More</div>');
+		      },
+		      unhover: function() {
+		        $(this).removeClass("hover");
+		        $(".learn-more").remove();
+		      }
+		    });
+		  });
+		</script>
+		
+		<style>
+			.section {
+			  border: 1px solid #999999;
+			  cursor: pointer;
+			  margin: 10px auto;
+			  width: 360px;
+			  position: relative;
+			}
+			.hover {
+			  border-color: #80250F;
+			}
+			.section h3 {
+			  margin: 0;
+			  border-width: 0 0 1px 0;
+			  padding: 2px 5px;
+			  background: #ddd;
+			}
+			.section h3 a {
+			  display: block;
+			}
+			.section h3 a:hover {
+			  background: transparent;
+			  color: #80250F;
+			}
+			.section p {
+			  padding: 5px 5px 15px 5px;
+			}
+			.section .learn-more {
+			  position: absolute;
+			  right: 0;
+			  bottom: 0;
+			  padding: 2px;
+			  border-style: solid;
+			  border-color: #80250F;
+			  border-width: 1px 0 0 1px;
+			  color: #0000FF;
+			  background: #ddd;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="section">
+		  <h3><a href="/demo/clickable">Section Title</a></h3>
+		  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras non est vel neque ornare porta. Donec convallis. Nam odio felis, euismod quis, molestie sed, auctor quis, purus. Donec eu dolor.</p>
+		</div>
+	</body>
+</html>

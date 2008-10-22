@@ -1,0 +1,37 @@
+/*
+ * jQuery Clickable Plugin
+ * Copyright (c) 2008 Matt Curry
+ * www.PseudoCoder.com
+ * http://github.com/mcurry/jquery/clickable/
+ * http://sandbox2.pseudocoder.com/demo/clickable
+ *
+ * @author      Matt Curry <matt@pseudocoder.com>
+ * @license     MIT
+ *
+ */
+ 
+/* Description */
+This is a small jQuery plugin that makes an entire element clickable based one of the links inside.
+
+/* Instructions */
+Involk by calling the clickable function:
+	$(".section").clickable();
+
+With options:
+	$(".section").clickable({
+	  link: "a:last",
+	  hover: function() {
+	    $(this).addClass("hover");
+	    $(this).append('<div class="learn-more">Learn More</div>');
+	  },
+	  unhover: function() {
+	    $(this).removeClass("hover");
+	    $(".learn-more").remove();
+	  }
+	});
+		    
+/* Options */
+Available options are:
+	* link - the link inside the element that will be used when the element is clicked on.  Defaults to "a:first"
+	* hover - callback function when the element is hovered
+	* unhover - callback function when the element is unhoverd
